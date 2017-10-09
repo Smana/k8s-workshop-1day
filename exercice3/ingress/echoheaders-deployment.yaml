@@ -1,0 +1,22 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    run: echoheaders
+  name: echoheaders
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: echoheaders
+  template:
+    metadata:
+      labels:
+        run: echoheaders
+    spec:
+      containers:
+      - image: gcr.io/google_containers/echoserver:1.4
+        name: echoheaders
+        ports:
+        - containerPort: 8080
+          protocol: TCP

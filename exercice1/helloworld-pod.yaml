@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app: helloworld
+  name: helloworld
+spec:
+  containers:
+  - image: tutum/hello-world:latest
+    name: helloworld
