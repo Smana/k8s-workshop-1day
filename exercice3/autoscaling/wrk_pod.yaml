@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+   name: wrk
+spec:
+   containers:
+   - name: wrk
+     image: williamyeh/wrk:4.0.2
+     ports:
+     resources:
+       limits:
+         cpu: 2
+         memory: 500M
+     args:
+       - "-d"
+       - "900"
+       - "-c"
+       - "200"
+       - "http://dummy-svc"

@@ -1,0 +1,23 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: dummy-deploy
+  labels:
+    app: dummy-deploy
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: dummy-deploy
+  template:
+    metadata:
+      labels:
+        app: dummy-deploy
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.12
+        resources:
+          limits:
+            cpu: 200m
+            memory: 200M

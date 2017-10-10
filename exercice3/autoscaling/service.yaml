@@ -1,14 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  labels:
-    run: web
-  name: web
+  name: dummy-svc
 spec:
   ports:
-  - port: 80
+  - name: http
+    port: 80
     protocol: TCP
     targetPort: 80
   selector:
-    run: web
-  type: ClusterIP
+    app: dummy-deploy
